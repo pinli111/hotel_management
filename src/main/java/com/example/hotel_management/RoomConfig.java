@@ -24,14 +24,16 @@ public class RoomConfig {
                     String roomName = "" + i + (char)j;
                     System.out.println(roomName);
                     System.out.println(count);
-                    Room room = new Room(roomName, Room.Status.Available, count);
                     map.put(roomName, count);
+                    Room room;
                     if(i % 2 == 1)
                     {
+                        room = new Room(roomName, Room.Status.Vacant, count);
                         count++;
                     }
                     else
                     {
+                        room = new Room(roomName, Room.Status.Available, count);
                         count--;
                     }
                     roomRepo.save(room);

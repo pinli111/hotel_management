@@ -28,26 +28,6 @@ public class RoomService {
     public String getAssignedRoom()
     {
         List<String> allAvailableRoom = roomRepo.getAllRoom(Room.Status.Available);
-        /*
-        List<String> words = new ArrayList<String>();
-        for(String str : allAvailableRoom)
-        {
-            System.out.println("String " + str);
-            Matcher match = Pattern.compile("[1-4]+[A-E]+").matcher(str);
-            while(match.find())
-            {
-                words.add(match.group());
-            }
-
-            char level = str.charAt(0);
-            char unit = str.charAt(1);
-            System.out.println("level: "  + level + " unit: " + unit);
-        }
-        for(String word : words)
-        {
-            System.out.println(word + " ");
-        }
-*/
         if(allAvailableRoom.isEmpty())
         {
             throw new IllegalStateException("There is no available room!");
